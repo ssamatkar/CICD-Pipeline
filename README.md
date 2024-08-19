@@ -259,11 +259,11 @@ mkdir ansible && cd ansible
 ```
 #### Now, Download the playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.`
 ```
-wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/devops-essentials/DevOpsSetup1.yml
+wget https://github.com/ssamatkar/CICD-Pipeline/blob/main/DevOpsSetup.yml
 ```
 #### Run the above playbook to deploy the packages
 ```
-ansible-playbook DevOpsSetup1.yml
+ansible-playbook DevOpsSetup.yml
 ```
 #### At the end of this step, `Jenkins-Server` will be ready for performing further Labs
 
