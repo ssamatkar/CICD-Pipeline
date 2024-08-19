@@ -259,7 +259,7 @@ mkdir ansible && cd ansible
 ```
 #### Now, Download the playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.`
 ```
-wget https://github.com/ssamatkar/CICD-Pipeline/blob/main/DevOpsSetup.yml
+wget https://raw.githubusercontent.com/ssamatkar/CICD-Pipeline/main/DevOpsSetup.yml
 ```
 #### Run the above playbook to deploy the packages
 ```
