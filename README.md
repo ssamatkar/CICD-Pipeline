@@ -4,14 +4,14 @@ Welcome to the DevOps Essentials Lab Cheat Sheet!
 ![how-devops](https://github.com/janjiralakirankumar/DevOpsEssentials/assets/137407373/b0493ccd-3370-4f98-b08a-6e76626ca226)
 
 This guide provides step-by-step instructions for completing various DevOps labs, covering tasks like: 
-`Setting up servers using Terraform,` `Working with Git and GitHub,` `Configuring Jenkins and GitWebHook,` and `Deploying code in Docker containers.`
+`Setting up servers using Terraform,` `Working with Git and GitHub,` `Configuring Jenkins and GitWebHook`.
 
 ### DevOps Essentials Lab Pre-requisites
 1. Basic understanding of Linux commands,
 2. Basic knowledge of a Cloud platform such as AWS,
 3. It's good to have an AWS-Free Tier Account for Practice.
 ---
-## Lab 1: Use Terraform to Setup the `Docker Server` and `Jenkins Server` for CICD Lab.
+## Lab 1: Use Terraform and Ansible to set up `Jenkins Server` for CICD Lab.
 
 **Objective:**
 The objective of this lab is to set up an AWS EC2 instances for Jenkins using Terraform. 
@@ -113,7 +113,7 @@ aws iam list-users
 ---------------------------------------------------------------------
 ### Task-3: Use Terraform to launch two servers.
 Create the Terraform configuration and variables files as described.
-* We need to create two additional servers (`Docker-server` and `Jenkins-server,` You can use **t2.micro** for Docker and Jenkins servers)
+* We need to create one jenkins servers
 * For **Git Operations** we will use the same **Anchor EC2** from where we are operating now 
 
 #### Create the terraform directory and set up the config files in it
@@ -225,11 +225,10 @@ terraform apply -auto-approve
 ```
 cat /etc/ansible/hosts
 ```
-It will show IP addresses of the Jenkins server and docker server as an example shown below.
 
 * [jenkins-server] 44.202.164.153
 
-**(Optional Step):** When you stop and start the EC2 Instances Public IP Changes. In that case, To update Jenkins & Docker Public IP addresses use the below command
+**(Optional Step):** When you stop and start the EC2 Instances Public IP Changes. In that case, To update Jenkins Public IP addresses use the below command
 ```
 sudo vi /etc/ansible/hosts 
 ```
@@ -257,7 +256,7 @@ sudo apt update
 cd ~
 mkdir ansible && cd ansible
 ```
-#### Now, Download the playbook, which will deploy packages onto the `Docker-server` and `Jenkins-Server.`
+#### Now, Download the playbook, which will deploy packages onto the `Jenkins-Server.`
 ```
 wget https://raw.githubusercontent.com/ssamatkar/CICD-Pipeline/main/DevOpsSetup.yml
 ```
